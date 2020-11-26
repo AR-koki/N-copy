@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'avatars/new'
-  get 'avatars/index'
-  get 'avatars/show'
-  get 'avatars/edit'
   devise_for :admins
   namespace :admins do
   	get 'top' => 'admins#top', as:'top'

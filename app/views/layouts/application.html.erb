@@ -10,6 +10,45 @@
   </head>
 
   <body>
+    <div class="header" id="header">
+      <nav class="navbar">
+        <div class="container relative">
+          <div class="navbar-header">
+             <h1 class="head-title">Netflix</h1>
+          </div>
+          <div id="slidemenu">
+            <div class="row list">
+              <ul class="nav navbar-right" data-hover="color" data-animations="zoomIn fadeIn fadeInUp fadeIn" style="margin-top: 25px;">
+                <!-- customers -->
+                <% if user_signed_in? %>
+                  <li class="" style="border: 1px;">
+                    <%= link_to users_users_path(@user) do %>
+                     <i class="glyphicon glyphicon-home" aria-hidden="true"></i> マイページ
+                    <% end %>
+                  </li>
+                  <!-- ------ -->
+                  <!-- adminz -->
+                <% elsif admin_signed_in? %>
+                  <li class="" style="border: 1px;">
+                  <%= link_to admins_items_path do %>
+                   <i class="glyphicon glyphicon-leaf" aria-hidden="true"></i> 商品一覧
+                  <% end %>
+                  <!-- ------ -->
+                  <!-- guest -->
+                <% else %>
+                  <li style="">
+                    <%= link_to new_user_session_path do %>
+                      <i class="glyphicon glyphicon-log-in" aria-hidden="true"></i> ログイン
+                    <% end %>
+                  </li>
+                <% end %>
+                <!-- --------- -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
     <%= yield %>
   </body>
 </html>

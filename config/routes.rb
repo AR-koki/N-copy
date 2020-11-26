@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   devise_for :users
   namespace :users do
-  	root 'user/homes#top'
+  	root 'users/homes#top'
   	resources :users, only: [:index, :new, :create, :edit, :show, :update]
   	resources :movies, only: [:index, :show]
   	resources :items, only: [:index, :show]

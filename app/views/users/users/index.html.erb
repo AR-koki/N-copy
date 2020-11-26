@@ -1,0 +1,15 @@
+<div class="container">
+	<div style="margin: 0 auto;width: 400px;">
+		<h1>どなたが観ますか？</h1>
+		<div>
+			<% @users.each do |user| %>
+				<% if user.name == nil %>
+					<p>no_name</p>
+				<% else %>
+					<%= user.email %>
+				<% end %>
+			<% end %>
+		</div>
+		<div><%= link_to "プロフィールの管理", edit_user_registration_path %></div>
+	</div>
+</div>

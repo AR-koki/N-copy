@@ -7,7 +7,7 @@ class Users::UsersController < ApplicationController
 	end
 	def create
 		@user = User.new(user_params)
-		@user.save
+		@user.save!
 		redirect_to users_movies_path
 	end
 	def show

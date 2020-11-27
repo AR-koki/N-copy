@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   namespace :users do
   	root 'users/homes#top'
   	resources :users, only: [:index, :new, :create, :edit, :show, :update]
+    resources :avatars
   	resources :movies, only: [:index, :show]
   	resources :items, only: [:index, :show]
   	resources :genres, only: [:index, :show]

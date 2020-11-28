@@ -1,0 +1,13 @@
+<div class="container">
+	<div style="margin: 0 auto;width: 400px;">
+		<h1>どなたが観ますか？</h1>
+		<div>
+			<%= current_user.name %>
+			<% @avatars.each do |avatar| %>
+				<%= link_to avatar.name, users_movies_path %>
+			<% end %>
+		</div>
+		<div><%= link_to "+", new_users_avatar_path %></div>
+		<div><%= link_to "プロフィールの管理", edit_user_registration_path %></div>
+	</div>
+</div>

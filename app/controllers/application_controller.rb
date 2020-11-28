@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   	flash[:notice] = "Welcome! You have signed up successfully."
   	case resource
   	when User
-      	users_users_path
+      	users_avatars_path
   	when Admin
   		admins_top_path
   	end

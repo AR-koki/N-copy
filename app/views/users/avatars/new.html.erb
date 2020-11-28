@@ -1,0 +1,15 @@
+<div class="container">
+	<div style="margin: 0 auto;width: 400px;">
+		<div>
+			<h1>プロフィールの追加</h1>
+			<p>Netflixをご利用になりたい方のプロフィールを追加してください</p>
+		</div>
+		<div>
+			<%= form_with model:@avatar, url: users_avatars_path do |f| %>
+			<%= f.hidden_field :email => current_user.email %>
+			<%= f.text_field :name %>
+			<%= f.submit "登録" %>
+			<% end %>
+		</div>
+	</div>
+</div>

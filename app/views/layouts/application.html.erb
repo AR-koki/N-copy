@@ -19,11 +19,16 @@
           <div id="slidemenu">
             <div class="row list">
               <ul class="nav navbar-right" data-hover="color" data-animations="zoomIn fadeIn fadeInUp fadeIn" style="margin-top: 25px;">
-                <!-- customers -->
+                <!-- users -->
                 <% if user_signed_in? %>
                   <li class="" style="border: 1px;">
                     <%= link_to users_users_path(@user) do %>
                      <i class="glyphicon glyphicon-home" aria-hidden="true"></i> マイページ
+                    <% end %>
+                  </li>
+                  <li class="">
+                    <%= link_to destroy_user_session_path, method: :delete do %>
+                      <i class="glyphicon glyphicon-log-out" aria-hidden="true"></i> logout
                     <% end %>
                   </li>
                   <!-- ------ -->

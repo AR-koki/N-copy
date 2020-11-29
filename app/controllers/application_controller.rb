@@ -7,15 +7,15 @@ class ApplicationController < ActionController::Base
   	when User
       	users_avatars_path
   	when Admin
-  		admins_top_path
+  		admins_movies_path
   	end
   end
 
   def after_sign_out_path_for(resource)
   	flash[:notice]= "Signed out successfully."
     case resource
-    when :customer
-      root_path
+    when :user
+      user_session_path
     when :admin
       new_admin_session_path
     end

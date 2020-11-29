@@ -4,4 +4,7 @@
 		<%= link_to "投稿", new_admins_movie_path %>
 	</div>
 	<div>映画一覧</div>
+		<% @movies.each do |movie| %>
+		<%= link_to movie.title, admins_movie_path(movie) %>
+		<% end %>
 </div>

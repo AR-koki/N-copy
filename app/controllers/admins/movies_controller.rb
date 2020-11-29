@@ -10,10 +10,16 @@ class Admins::MoviesController < ApplicationController
   def create
     @movie = Movie.new(movie_params)
     @movie.save
-    redarect_to admins_movies_path
+    redirect_to admins_movies_path
+    @item = Item.new(item_params)
+    @item.save
+    redirect_to admins_movie_path(@movie)
   end
 
   def show
+    @movie = Movie.find(params[:id])
+    @item = Item.new
+    @items = Item.where(movie_id: params[:id])
   end
 
   def edit

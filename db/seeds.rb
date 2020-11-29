@@ -11,3 +11,8 @@ Admin.create(
 			password: "aaaaaa",
 			password_confirmation: "aaaaaa"
 			)
+
+Genre.create(name: "邦画")
+Genre.create(name: "洋画")
+Genre.create(name: "アニメ")
+Genre.create(name: "ドラマ")

@@ -11,9 +11,6 @@ class Admins::MoviesController < ApplicationController
     @movie = Movie.new(movie_params)
     @movie.save
     redirect_to admins_movies_path
-    @item = Item.new(item_params)
-    @item.save
-    redirect_to admins_movie_path(@movie)
   end
 
   def show

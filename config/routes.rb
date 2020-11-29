@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   namespace :admins do
   	get 'top' => 'admins#top', as:'top'
   	resources :users, only: [:index, :edit, :show, :update, :unsubscribe]
-  	resources :movies
-  	resources :items
+  	resources :movies do
+      member do
+        resources :items
+      end
+    end
   	resources :genres
   end
   devise_for :users

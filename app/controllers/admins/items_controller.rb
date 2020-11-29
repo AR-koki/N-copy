@@ -6,6 +6,10 @@ class Admins::ItemsController < ApplicationController
   end
 
   def create
+    @movie = Movie.find(params[:id])
+    @item = Item.new(item_params)
+    @item.save
+    redirect_to admins_movie_path(@movie)
   end
 
   def show
@@ -22,6 +26,6 @@ class Admins::ItemsController < ApplicationController
 
   private
   def item_params
-  	params.require(:item).permit(:movie_id, :image, :title, :gist)
+  	params.permit(:movie_id, :image, :title, :gist)
   end
 end

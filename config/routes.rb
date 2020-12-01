@@ -4,9 +4,7 @@ Rails.application.routes.draw do
   	get 'top' => 'admins#top', as:'top'
   	resources :users, only: [:index, :edit, :show, :update, :unsubscribe]
   	resources :movies do
-      member do
         resources :items
-      end
     end
   	resources :genres
   end

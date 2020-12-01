@@ -1,10 +1,10 @@
 <div class="container">
 	<div>
 		<h2><%= @movie.title %></h2>
-		<h4><%= link_to "話数の追加", new_admins_item_path %></h4>
+		<h4><%= link_to "話数の追加", new_admins_movie_item_path(@movie) %></h4>
 		<h2>各話</h2>
 		<% @items.each do |item| %>
-			<%= @item.title %>
+			<%= @movie.items.title %>
 		<% end %>
 	</div>
 </div>

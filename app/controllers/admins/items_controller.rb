@@ -4,6 +4,7 @@ class Admins::ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @movie = Movie.find(params[:movie_id])
   end
 
   def create

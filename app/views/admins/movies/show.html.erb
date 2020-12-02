@@ -1,10 +1,15 @@
 <div class="container">
 	<div>
 		<h2><%= @movie.title %></h2>
-		<h4><%= link_to "話数の追加", new_admins_movie_item_path(@movie) %></h4>
+		<h4>話数の追加</h4>
+		<%= form_with model: Item.new, url:admins_movie_items_path(@movie), method: :post do |f| %>
+			<%= f.text_field :story %><br>
+			<%= f.text_area :gist %><br>
+			<%= f.submit '追加' %>
+		<% end %>
 		<h2>各話</h2>
 		<% @movie.items.each do |item| %>
-				<div class="row"><%= item.title %></div>
+				<div class="row"><%= item.story %></div>
 				<div class="row"><%= item.gist %></div>
 		<% end %>
 	</div>

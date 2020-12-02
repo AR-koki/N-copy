@@ -15,14 +15,17 @@ class Admins::MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
-    @item = Item.new
     @items = Item.where(movie_id: params[:id])
+    @item = Item.new
   end
 
   def edit
   end
 
   def update
+    @movie = Movie.find(params[:id])
+    @movie.update(movie_params)
+    redirect_to admins_movie_path(@movie)
   end
 
   def destroy

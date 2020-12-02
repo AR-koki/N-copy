@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2020_11_29_063443) do
   create_table "items", force: :cascade do |t|
     t.integer "movie_id"
     t.string "image_id"
-    t.string "title"
+    t.string "story"
     t.text "gist"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -8,7 +8,8 @@
 		<div>
 			<tr>
 				<th width="15%">タイトル</th>
-				<th width="15%">詳細</th>
+				<th width="15%">内容</th>
+				<th width="15%">ジャンル</th>
 				<th width="15%">編集</th>
 				<th width="15%">状態</th>
 			</tr>
@@ -17,6 +18,7 @@
 		<tr>
 			<td><%= link_to movie.title, admins_movie_path(movie) %></td>
 			<td><%= movie.introduction %></td>
+			<td><%= movie.genre.name %></td>
 			<td><%= link_to "編集",edit_admins_movie_path(movie) %></td>
 			<td>
 				<% if movie.is_active %>

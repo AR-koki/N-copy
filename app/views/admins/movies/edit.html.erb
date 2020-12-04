@@ -1,0 +1,21 @@
+<div class="container">
+	<table>
+		<tr border="1" width="700">
+			<th width="15%">タイトル</th>
+			<th width="15%">内容</th>
+			<th width="15%">ジャンル</th>
+			<th width="15%">状態</th>
+		</tr>
+		<tr>
+			<%= form_with model:@movie, url:admins_movie_path do |f| %>
+			<td><%= f.text_field :title %></td>
+			<td><%= f.text_area :introduction %></td>
+			<td><%= f.collection_select :genre_id, Genre.all, :id, :name %></td>
+			<td><label><%= f.radio_button :is_active, true %>有効</label>
+				<label><%= f.radio_button :is_active, false %>無効</label>
+			</td>
+		</tr>
+	</table>
+	<div><%= f.submit "編集" %></div>
+	<% end %>
+</div>

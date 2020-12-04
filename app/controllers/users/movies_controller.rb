@@ -1,5 +1,6 @@
 class Users::MoviesController < ApplicationController
   def index
+  	@movies = Movie.where(is_active: true)
   end
 
   def show

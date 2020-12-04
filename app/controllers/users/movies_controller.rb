@@ -4,6 +4,8 @@ class Users::MoviesController < ApplicationController
   end
 
   def show
+  	@movie = Movie.find(params[:id])
+  	@items = Item.where(movie_id: params[:id])
   end
 
   private

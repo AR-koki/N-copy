@@ -1,5 +1,9 @@
 <div class="container">
 	<% @movies.each do |movie| %>
-		<%= movie.title %>
+		<%= link_to users_movie_path(movie) do %>
+			<div style="width: 80px;height: 50px;border: 1px solid;float: left;">
+				<%= movie.title %>
+			</div>
+		<% end %>
 	<% end %>
 </div>

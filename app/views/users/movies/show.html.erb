@@ -1,0 +1,10 @@
+<div class="container">
+	<h2><%= @movie.title %></h2>
+	<div>
+		<% @movie.items.each do |item| %>
+			<%= link_to users_item_path(item) do %>
+				<%= item.story %>
+			<% end %>
+		<% end %>
+	</div>
+</div>

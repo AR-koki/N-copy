@@ -4,12 +4,28 @@
 		<%= link_to "投稿", new_admins_movie_path %>
 	</div>
 	<div>映画一覧</div>
+	<table border="1" width="700">
+		<div>
+			<tr>
+				<th width="15%">タイトル</th>
+				<th width="15%">詳細</th>
+				<th width="15%">編集</th>
+				<th width="15%">状態</th>
+			</tr>
+		</div>
 		<% @movies.each do |movie| %>
-		<%= link_to movie.title, admins_movie_path(movie) %>
-		<% if movie.is_active %>
-			<p>有効</p>
-		<% else %>
-			<p>無効</p>
+		<tr>
+			<td><%= link_to movie.title, admins_movie_path(movie) %></td>
+			<td><%= movie.introduction %></td>
+			<td><%= link_to "編集",edit_admins_movie_path(movie) %></td>
+			<td>
+				<% if movie.is_active %>
+					<p>有効</p>
+				<% else %>
+					<p>無効</p>
+				<% end %>
+			</td>
 		<% end %>
-		<% end %>
+		</tr>
+	</table>
 </div>

@@ -1,5 +1,22 @@
 <div class="container">
-	<%= @users.each do |user| %>
-		<%= user.name %>
+	<table border="1" width="700">
+		<tr>
+			<th width="30%">user.id</th>
+			<th width="30%">メールアドレス</th>
+			<th width="30%">会員状態</th>
+		</tr>
+		<% @users.each do |user| %>
+		<tr>
+			<td><%= user.id %></td>
+			<td><%= user.email %></td>
+			<td>
+				<% if user.is_deleted == false %>
+					有効
+				<% else %>
+					退会
+				<% end %>
+			</td>
+		</tr>
 	<% end %>
+	</table>
 </div>

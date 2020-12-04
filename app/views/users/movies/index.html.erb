@@ -1,9 +1,52 @@
 <div class="container">
-	<% @movies.each do |movie| %>
-		<%= link_to users_movie_path(movie) do %>
-			<div style="width: 80px;height: 50px;border: 1px solid;float: left;">
-				<%= movie.title %>
-			</div>
+	<p>全部</p>
+	<div class="row">
+		<% @movies.each do |movie| %>
+			<%= link_to users_movie_path(movie) do %>
+				<div style="width: 80px;height: 50px;border: 1px solid;float: left;">
+					<%= movie.title %>
+				</div>
+			<% end %>
 		<% end %>
-	<% end %>
+	</div>
+	<p>邦画</p>
+	<div class="row">
+		<% @movie_houga.each do |movie| %>
+			<%= link_to users_movie_path(movie) do %>
+				<div style="width: 80px;height: 50px;border: 1px solid;float: left;">
+					<%= movie.title %>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+	<p>洋画</p>
+	<div class="row">
+		<% @movie_youga.each do |movie| %>
+			<%= link_to users_movie_path(movie) do %>
+				<div style="width: 80px;height: 50px;border: 1px solid;float: left;">
+					<%= movie.title %>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+	<p>アニメ</p>
+	<div class="row">
+		<% @movie_anime.each do |movie| %>
+			<%= link_to users_movie_path(movie) do %>
+				<div style="width: 80px;height: 50px;border: 1px solid;float: left;">
+					<%= movie.title %>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+	<p>ドラマ</p>
+	<div class="row">
+		<% @movie_dorama.each do |movie| %>
+			<%= link_to users_movie_path(movie) do %>
+				<div style="width: 80px;height: 50px;border: 1px solid;float: left;">
+					<%= movie.title %>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
 </div>

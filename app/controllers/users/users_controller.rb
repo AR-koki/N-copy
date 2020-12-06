@@ -16,6 +16,10 @@ class Users::UsersController < ApplicationController
 	end
 	def destory
 	end
+	def my_lists
+		user = current_user
+		@mylists = MyList.where(user_id: user.id)
+	end
 	private
 	def user_params
 		params.require(:user).permit(:name, :email, :is_deleted)

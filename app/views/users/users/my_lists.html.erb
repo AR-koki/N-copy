@@ -1,0 +1,9 @@
+<div class="container">
+	<div>
+		<% @mylists.each do |my_list| %>
+			<%= link_to users_movie_path(my_list.movie) do %>
+				<%= my_list.movie.title %>
+			<% end %>
+		<% end %>
+	</div>
+</div>

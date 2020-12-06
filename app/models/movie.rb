@@ -3,5 +3,6 @@ class Movie < ApplicationRecord
 	has_many :items, dependent: :destroy
 	belongs_to :category, optional: true
 	belongs_to :genre, optional: true
+	has_many :movies, dependent: :destroy
 	attachment :image
 end

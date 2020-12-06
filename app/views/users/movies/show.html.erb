@@ -1,6 +1,21 @@
 <div class="container">
 	<h2><%= @movie.title %></h2>
 	<div>
+		<% if @movie.my_list_by?(current_user) %>
+			<div>
+				<%= link_to users_movie_my_lists_path(@movie), method: :delete do %>
+					<p>-</p>
+				<% end %>
+			</div>
+		<% else %>
+			<div>
+				<%= link_to users_movie_my_lists_path(@movie), method: :post do %>
+					<p>+</p>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+	<div>
 		<% @movie.items.each do |item| %>
 			<%= link_to users_item_path(item) do %>
 				<%= item.story %>

@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   	root 'users/homes#top'
   	resources :users, only: [:index, :new, :create, :edit, :show, :update]
     resources :avatars
-  	resources :movies, only: [:index, :show]
+  	resources :movies, only: [:index, :show] do
+      resource :my_lists
+    end
   	resources :items, only: [:index, :show]
   	resources :genres, only: [:index, :show]
   end

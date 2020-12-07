@@ -3,9 +3,25 @@
 		<h2><%= @movie.title %></h2>
 		<h4><%= link_to "話数の追加", new_admins_movie_item_path(@movie) %></h4>
 		<h2>各話</h2>
+		<table border="1" width="800px">
+			<tr>
+				<th width="5%">話</th>
+				<th width="10%">サムネ</th>
+				<th width="30%">タイトル</th>
+				<th width="45%">内容</th>
+				<th width="5%">編集</th>
+				<th width="5%">削除</th>
+			</tr>
 		<% @movie.items.each do |item| %>
-				<div class="row"><%= item.story %></div>
-				<div class="row"><%= item.gist %></div>
+			<tr>
+				<td><%= item.id %></td>
+				<td></td>
+				<td><%= item.story %></td>
+				<td><%= item.gist %></td>
+				<td><%= link_to "編集",edit_admins_movie_item_path(@movie,item) %></td>
+				<td><%= link_to "削除",admins_movie_item_path(@movie,item), method: :delete %></td>
+			</tr>
 		<% end %>
+		</table>
 	</div>
 </div>

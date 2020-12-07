@@ -20,12 +20,22 @@ class Admins::ItemsController < ApplicationController
   end
 
   def edit
+    @movie = Movie.find(params[:movie_id])
+    @item = Item.find(params[:id])
   end
 
   def update
+    @movie = Movie.find(params[:movie_id])
+    @item = Item.find(params[:id])
+    @item.update(item_params)
+    redirect_to admins_movie_path(@movie)
   end
 
   def destroy
+    @movie = Movie.find(params[:movie_id])
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to admins_movie_path(@movie)
   end
 
   private

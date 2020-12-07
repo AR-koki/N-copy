@@ -1,0 +1,18 @@
+<div class="container">
+	<div class="text-center">
+		<h2>プロフィールの編集</h2>
+		<div class="row">
+			<div class="col-xs-3"></div>
+			<div class="col-xs-2">
+				<div style="width: 100px;height: 100px;border: 1px solid;"></div>
+			</div>
+			<div class="col-xs-4">
+				<%= form_with model:@avatar,url:users_avatar_path(@avatar) do |f| %>
+					<%= f.text_field :name %>
+			</div>
+		</div>
+		<%= f.submit "保存" %>
+		<%= link_to "キャンセル", users_avatars_path(current_user) %>
+		<% end %>
+	</div>
+</div>

@@ -17,9 +17,17 @@
 	</div>
 	<div>
 		<% @movie.items.each do |item| %>
-			<%= link_to users_item_path(item) do %>
-				<%= item.story %>
-			<% end %>
+				<div>
+					<%= link_to users_item_path(item) do %>
+					<div class="row">
+						<div style="float: left;"><%= item.id %></div>
+							<div style="float: left;margin-left: 50px;">
+								<div class="row"><%= item.story %></div>
+								<div class="row"><%= item.gist %></div>
+							</div>
+					</div>
+					<% end %>
+				</div>
 		<% end %>
 	</div>
 </div>

@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   namespace :users do
   	root 'users/homes#top'
   	resources :users, only: [:index, :new, :create, :edit, :show, :update]
+    put "users/:id/withdrow" => "users#withdrow", as: "user_withdrow"
     resources :avatars
-    patch "users/withdrow" => "users#withdrow", as: "user_withdrow"
     get "user/:id/avatars_edit" => "avatars#avatar_edit", as: :avatar_edit
   	resources :movies, only: [:index, :show] do
       resource :my_lists

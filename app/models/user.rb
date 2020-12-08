@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   has_many :avatars, dependent: :destroy
   has_many :my_lists, dependent: :destroy
+
+  def active_for_authentication?
+    super && (self.is_deleted == false)
+  end
 end

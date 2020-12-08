@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   	root 'users/homes#top'
   	resources :users, only: [:index, :new, :create, :edit, :show, :update]
     resources :avatars
+    patch "users/withdrow" => "users#withdrow", as: "user_withdrow"
     get "user/:id/avatars_edit" => "avatars#avatar_edit", as: :avatar_edit
   	resources :movies, only: [:index, :show] do
       resource :my_lists

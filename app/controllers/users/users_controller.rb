@@ -11,10 +11,24 @@ class Users::UsersController < ApplicationController
 		redirect_to users_movies_path
 	end
 	def show
+		@user = User.find(params[:id])
 	end
 	def edit
 	end
+	def update
+		@user = User.find(current_user.id)
+		redirect_to users_users_path
+	end
 	def destory
+	end
+	def withdrow
+		@user = User.find(current_user)
+		if @user.update(is_deleted: true)
+			reset_session
+			redirect_to new_user_session_path
+		else
+			render :show
+		end
 	end
 	def my_lists
 		user = current_user

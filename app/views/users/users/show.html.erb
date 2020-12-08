@@ -1,0 +1,18 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-2"></div>
+		<div class="col-xs-2">
+			<h3>メンバーシップ</h3>
+			<div>
+				<%= link_to "退会", users_user_withdrow_path, method: :patch %>
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<div><%= @user.email %></div>
+			<div>パスワード:<%= @user.reset_password_token %></div>
+		</div>
+		<div class="col-xs-2">
+			
+		</div>
+	</div>
+</div>

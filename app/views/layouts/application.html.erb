@@ -25,7 +25,7 @@
                     <%= link_to "マイリスト", users_mylist_index_path(current_user) %>
                   </li>
                   <li class="" style="border: 1px;">
-                    <%= link_to users_users_path(@user) do %>
+                    <%= link_to users_user_path(current_user) do %>
                      <i class="glyphicon glyphicon-home" aria-hidden="true"></i> マイページ
                     <% end %>
                   </li>

@@ -1,5 +1,6 @@
 <div class="container">
 	<h2><%= @movie.title %></h2>
+	<p><%= @movie.introduction %></p>
 	<div>
 		<% if @movie.my_list_by?(current_user) %>
 			<div>
@@ -15,19 +16,22 @@
 			</div>
 		<% end %>
 	</div>
+	<h3>エピソード</h3>
 	<div>
 		<% @movie.items.each do |item| %>
-				<div>
+			<table>
+				<tr>
 					<%= link_to users_item_path(item) do %>
-					<div class="row">
-						<div style="float: left;"><%= item.id %></div>
+						<div class="row">
+							<div style="float: left;"><%= item.id %></div>
 							<div style="float: left;margin-left: 50px;">
 								<div class="row"><%= item.story %></div>
 								<div class="row"><%= item.gist %></div>
 							</div>
-					</div>
+						</div>
 					<% end %>
-				</div>
+				</tr>
+			</table>
 		<% end %>
 	</div>
 </div>

@@ -1,4 +1,14 @@
 <div class="container">
+	<p>マイリスト</p>
+	<div class="row">
+		<% @movie_mylist.each do |my_list| %>
+			<%= link_to users_movie_path(my_list.movie) do %>
+				<div style="width: 80px;height: 50px;border: 1px solid;float: left;">
+					<%= my_list.movie.title %>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
 	<p>全部</p>
 	<div class="row">
 		<% @movies.each do |movie| %>

@@ -5,6 +5,8 @@ class Users::MoviesController < ApplicationController
   	@movie_youga = Movie.where(is_active: true).where(genre_id: 2)
   	@movie_anime = Movie.where(is_active: true).where(genre_id: 3)
   	@movie_dorama = Movie.where(is_active: true).where(genre_id: 4)
+  	user = current_user
+	@movie_mylist = MyList.where(user_id: user.id)
   end
 
   def show

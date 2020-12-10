@@ -1,12 +1,13 @@
 class Users::AvatarsController < ApplicationController
 	def index
-		@avatars = Avatar.all
+		@avatars = Avatar.where(user_id: current_user.id)
 	end
 	def new
 		@avatar = Avatar.new
 	end
 	def create
 		@avatar = Avatar.new(avatar_params)
+		@avatar.user_id = current_user.id
 		@avatar.save
 		redirect_to users_avatars_path
 	end

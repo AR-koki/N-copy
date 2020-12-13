@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       resource :my_lists
     end
     get "genres/video_movie" => "movies#video_movie", as: :video_movie
+    get "genres/video_dorama" => "movies#video_dorama", as: :video_dorama
     get "users/:id/my_lists" => "users#my_lists", as: :mylist_index
   	resources :items, only: [:index, :show]
   	resources :genres, only: [:index, :show]

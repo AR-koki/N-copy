@@ -20,6 +20,8 @@ class Users::MoviesController < ApplicationController
   end
 
   def video_dorama
+  	@movie_mylist = MyList.where(user_id: current_user.id)
+  	@movies = Movie.where(genre_id:[3,4])
   end
 
   private

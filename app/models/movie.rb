@@ -9,4 +9,5 @@ class Movie < ApplicationRecord
 	def my_list_by?(user)
 		my_lists.where(user_id: user.id).exists?
 	end
+
 end

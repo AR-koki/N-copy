@@ -14,6 +14,14 @@ class Users::MoviesController < ApplicationController
   	@items = Item.where(movie_id: params[:id])
   end
 
+  def video_movie
+  	@movie_mylist = MyList.where(user_id: current_user.id)
+  	@movies = Movie.where(genre_id:[1,2])
+  end
+
+  def video_dorama
+  end
+
   private
   def movie_params
   	params.require(:movie).permit(:category_id, :is_active, :title, :evaluation, :genre_id, :introduction, :image)

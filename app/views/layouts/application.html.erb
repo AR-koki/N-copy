@@ -18,25 +18,28 @@
           </div>
           <div id="slidemenu">
             <div class="row list">
-              <ul class="nav navbar-nav navbar-right" data-hover="color" data-animations="zoomIn fadeIn fadeInUp fadeIn" style="margin-top: 25px;">
-                <!-- users -->
-                <% if user_signed_in? %>
+              <!-- users -->
+              <% if user_signed_in? %>
+                <ul class="nav navbar-nav" data-hover="color" data-animations="zoomIn fadeIn fadeInUp fadeIn" style="margin-top: 25px;">
+                  <li>
+                    <%= link_to "ホーム", users_movies_path %>
+                  </li>
                   <li>
                     <%= link_to "マイリスト", users_mylist_index_path(current_user) %>
+                  </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" data-hover="color" data-animations="zoomIn fadeIn fadeInUp fadeIn" style="margin-top: 25px;">
+                  <li class="">
+                    <%= link_to destroy_user_session_path, method: :delete do %>
+                      <i class="glyphicon glyphicon-log-out" aria-hidden="true"></i> logout
+                    <% end %>
                   </li>
                   <li class="" style="border: 1px;">
                     <%= link_to users_user_path(current_user) do %>
                      <i class="glyphicon glyphicon-home" aria-hidden="true"></i> マイページ
                     <% end %>
                   </li>
-                  <li>
-                    <%= link_to "一覧", users_movies_path %>
-                  </li>
-                  <li class="">
-                    <%= link_to destroy_user_session_path, method: :delete do %>
-                      <i class="glyphicon glyphicon-log-out" aria-hidden="true"></i> logout
-                    <% end %>
-                  </li>
+                </ul>
                   <!-- ------ -->
                   <!-- adminz -->
                 <% elsif admin_signed_in? %>

@@ -1,6 +1,9 @@
 <div class="container">
 	<h2><%= @movie.title %></h2>
 	<p><%= @movie.introduction %></p>
+	<%= link_to @movie.image_id.url.to_s do %>
+		<p>動画を見る</p>
+	<% end %>
 	<div>
 		<% if @movie.my_list_by?(current_user) %>
 			<div>

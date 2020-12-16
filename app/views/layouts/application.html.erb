@@ -35,7 +35,7 @@
                   </li>
                 </ul>
                 <div id="sp-menu">
-                  <ul class="nav">
+                  <ul class="nav navbar-right">
                     <li class="">
                       <%= link_to "ログアウト",destroy_user_session_path, method: :delete %>
                     </li>
@@ -57,6 +57,7 @@
                   <!-- ------ -->
                   <!-- adminz -->
                 <% elsif admin_signed_in? %>
+                <ul class="nav navbar-nav" data-hover="color" data-animations="zoomIn fadeIn fadeInUp fadeIn" style="margin-top: 25px;">
                   <li class="" style="border: 1px;">
                     <%= link_to admins_movies_path do %>
                      <i class="glyphicon glyphicon-leaf" aria-hidden="true"></i> ムービー一覧
@@ -72,15 +73,17 @@
                       ログアウト
                     <% end %>
                   </li>
+                </ul>
                   <!-- ------ -->
                   <!-- guest -->
                 <% else %>
+                <ul class="nav navbar-nav navbar-right" data-hover="color" data-animations="zoomIn fadeIn fadeInUp fadeIn" style="margin-top: 25px;">
                   <li style="">
                     <%= link_to "ログイン", new_user_session_path,method: :get %>
                   </li>
+                </ul>
                 <% end %>
                 <!-- --------- -->
-              </ul>
             </div>
           </div>
         </div>

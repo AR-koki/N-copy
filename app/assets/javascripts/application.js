@@ -18,7 +18,12 @@
 //= require_tree .
 
 $(function() {
-  $('.menu-trigger').on('click', function(event) {
+  $('.menu-trigger').hover(function(event) {
+    $(this).toggleClass('active');
+    $('#sp-menu').fadeToggle();
+    event.preventDefault();
+  });
+  $('#sp-menu').hover(function(event) {
     $(this).toggleClass('active');
     $('#sp-menu').fadeToggle();
     event.preventDefault();

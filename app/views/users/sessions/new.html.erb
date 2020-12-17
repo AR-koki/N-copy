@@ -1,20 +1,20 @@
   <div class="background">
     <div style="font-size: 60px;color: red;margin-left: 80px;">Netflix</div>
-    <div style="margin: 0 auto; width: 300px;padding-top: 50px;background-color: rgba(0,0,0,.75);">
-      <div style="padding-left: 30px;">
+    <div style="margin: 0 auto; width: 400px;height: 600px;padding-top: 50px;background-color: rgba(0,0,0,.75);">
+      <div style="padding-left: 50px;">
         <h2 style="margin: 0;color: white;">ログイン</h2>
 
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field">
-            <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス" %>
+            <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス",style: "background-color:#333;width: 300px;height:50px;margin: 20px 0;border:0;border-radius:3px;" %>
           </div>
 
           <div class="field">
-            <%= f.password_field :password, placeholder: "パスワード" %>
+            <%= f.password_field :password, placeholder: "パスワード",style: "background-color:#333;width: 300px;height:50px;border:0;border-radius:3px;"  %>
           </div>
 
-          <div class="actions">
-            <%= f.submit "Log in" %>
+          <div class="actions" style="margin-top:30px;">
+            <%= f.submit "ログイン",style:"width:300px;color:white;background-color:red;height:50px;border:0;border-radius:3px;" %>
           </div>
         <% end %>
       </div>

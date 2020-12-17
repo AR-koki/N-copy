@@ -18,6 +18,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	margin: 0;
+}
+
 #hm-icon{
   position: fixed;
   right: 50px;

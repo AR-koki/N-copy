@@ -1,8 +1,12 @@
-<div class="container">
-  <div class="text-center">
-    <h1>映画やTV番組、<br>アニメが見放題</h1>
-    <p>映画やドラマをもっと自由に。<br>いつでもキャンセルOK。</p>
-    <p>まもなくご視聴いただけます！メールアドレスを入力してメンバーシップを開始、または再開して<br>ください。</p>
+<div class="background">
+  <div style="font-size: 40px;color: red;margin: 10px 0 0 80px;float: left;">Netflix</div>
+  <%= link_to new_user_session_path do %>
+    <div style="float: right;width:100px;font-size: 20px;color:white;background-color:red;height:40px;border:0;border-radius:3px;line-height: 40px;text-align: center;margin: 20px 50px 0 0;">ログイン</div>
+  <% end %>
+  <div class="text-center" style="overflow:hidden;color: white;padding-top: 200px;">
+    <h1 style="font-size: 50px;font-weight: bold;">映画やTV番組、<br>アニメが見放題</h1>
+    <p style="font-size: 25px;">映画やドラマをもっと自由に。<br>いつでもキャンセルOK。</p>
+    <p style="font-size: 20px;padding-top: 20px;">まもなくご視聴いただけます！メールアドレスを入力してメンバーシップを開始、または再開して<br>ください。</p>
   </div>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>

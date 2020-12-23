@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <% if admin_signed_in? %>
     <div class="header" id="header">
       <nav class="navbar navbar-main navbar-default">
         <div class="container relative">
@@ -19,7 +20,6 @@
           <div id="slidemenu">
             <div class="row list">
                   <!-- adminz -->
-                <% if admin_signed_in? %>
                 <ul class="nav navbar-nav" data-hover="color" data-animations="zoomIn fadeIn fadeInUp fadeIn" style="margin-top: 25px;">
                   <li class="" style="border: 1px;">
                     <%= link_to admins_movies_path do %>
@@ -39,19 +39,13 @@
                 </ul>
                   <!-- ------ -->
                   <!-- guest -->
-                <% else %>
-                <ul class="nav navbar-nav navbar-right" data-hover="color" data-animations="zoomIn fadeIn fadeInUp fadeIn" style="margin-top: 25px;">
-                  <li style="">
-                    <%= link_to "ログイン", new_user_session_path,method: :get %>
-                  </li>
-                </ul>
-                <% end %>
                 <!-- --------- -->
             </div>
           </div>
         </div>
       </nav>
     </div>
+  <% end %>
     <%= yield %>
   </body>
 </html>

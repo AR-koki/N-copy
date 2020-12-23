@@ -1,4 +1,54 @@
 <div class="container" style="background-color: black;width: 100%;padding-left: 100px;">
+	<div class="header" id="header">
+      <nav class="navbar navbar-main navbar-default">
+        <div class="container relative">
+          <div class="navbar-header">
+             <h1 class="head-title">Netflix</h1>
+          </div>
+          <div id="slidemenu">
+            <div class="row list">
+              <!-- users -->
+              <% if user_signed_in? %>
+                <ul class="nav navbar-nav" data-hover="color" data-animations="zoomIn fadeIn fadeInUp fadeIn" style="margin-top: 25px;">
+                  <li>
+                    <%= link_to "ホーム", users_movies_path %>
+                  </li>
+                  <li>
+                    <%= link_to "TV番組・ドラマ", users_video_dorama_path %>
+                  </li>
+                  <li>
+                    <%= link_to "映画", users_video_movie_path %>
+                  </li>
+                  <li>
+                    <%= link_to "マイリスト", users_mylist_index_path(current_user) %>
+                  </li>
+                </ul>
+                <div id="sp-menu">
+                  <ul class="nav navbar-right">
+                    <li class="">
+                      <%= link_to "ログアウト",destroy_user_session_path, method: :delete %>
+                    </li>
+                    <li class="" style="border: 1px;">
+                      <%= link_to "マイページ",users_user_path(current_user) %>
+                    </li>
+                  </ul>
+                </div>
+                <div id="hm-icon">
+                  <a class="menu-trigger" href="#">
+                    <div><%= image_tag 'nara.jpg',size: '40x40' %></div>
+                  </a>
+                </div>
+                <div id="hm-icon2">
+                  <a class="menu-trigger" href="#">
+                    <div>▼</div>
+                  </a>
+                </div>
+               <% end %>
+            </div>
+           </div>
+        </div>
+    	</nav>
+	</div>
 	<p>マイリスト</p>
 	<div class="row">
 		<% @movie_mylist.each do |my_list| %>

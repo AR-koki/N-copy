@@ -5,6 +5,8 @@
 		<%= f.collection_select :genre_id, Genre.all, :id, :name %><br>
 		<label><%= f.radio_button :is_active, true %>有効</label>
 		<label><%= f.radio_button :is_active, false %>無効</label><br>
+		<p>サムネイル</p>
+		<%= f.file_field :image_id %>
 		<p>ムービー</p><br>
 		<%= f.file_field :image_id, :accept => 'video/*' %>
 		<p>タイトル</p><br>

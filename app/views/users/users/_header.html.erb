@@ -24,6 +24,9 @@
                 </ul>
                 <div id="sp-menu">
                   <ul class="nav navbar-right">
+                    <li class="" style="border: 1px;">
+                      <%= link_to "プロフィール管理",users_avatars_path(current_user) %>
+                    </li>
                     <li class="">
                       <%= link_to "ログアウト",destroy_user_session_path, method: :delete %>
                     </li>

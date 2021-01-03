@@ -8,7 +8,7 @@ class Users::AvatarsController < ApplicationController
 	def create
 		@avatar = Avatar.new(avatar_params)
 		@avatar.user_id = current_user.id
-		@avatar.save
+		@avatar.save!
 		redirect_to users_avatars_path
 	end
 	def update

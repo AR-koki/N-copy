@@ -27,13 +27,4 @@ $(function() {
     $('#sp-menu').fadeToggle();
     event.preventDefault();
   });
-
-  $('.box').hide();
-  $('.movie-trigger').hover(function(){
-  	$('.box').show();
-  	},
-  	function(){
-  		$('.box').hide();
-  	}
-  	);
 });

@@ -23,26 +23,11 @@
 	<p>邦画</p>
 	<div class="row">
 		<% @movie_houga.each do |movie| %>
-			<% if movie.image_id? %>
-				<%= link_to users_movie_path(movie) do %>
-					<div class="movie-trigger" style="width: 200px;height: 120px;border: 1px solid;float: left;margin-right: 3px;border-radius: 5px;">
-						<%= image_tag movie.image_id.thumb.url %>
-					</div>
-				<% end %>
-			<% else %>
-				<%= link_to users_movie_path(movie) do %>
-					<div style="width: 200px;height: 120px;border: 1px solid;float: left;margin-right: 3px;border-radius: 5px;">
-						<%= movie.title %>
-					</div>
-				<% end %>
-			<% end %>
-			<div class="movie-show">
-				<div class="box">
-					<div><%= movie.title %></div>
-					<div><%= movie.introduction %></div>
-					<div><%= movie.items.ids %></div>
+			<%= link_to users_movie_path(movie) do %>
+				<div style="width: 200px;height: 120px;border: 1px solid;float: left;margin-right: 3px;border-radius: 5px;">
+					<%= movie.title %>
 				</div>
-			</div>
+			<% end %>
 		<% end %>
 	</div>
 	<p>洋画</p>
